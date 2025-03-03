@@ -1,78 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:background="@color/purple"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_weight="7"
-        android:background="@color/red"
-        android:layout_height="0dp">
+    <LinearLayout style="@style/LayoutParent">
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:background="@color/white"
-            android:layout_height="match_parent">
+            android:id="@+id/team_a"
+            style="@style/LayoutChild">
 
             <TextView
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:text="TEAM A"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"/>
+                style="@style/LabelName"
+                android:text="@string/lb_team_a" />
+
+            <TextView
+                android:id="@+id/lb_scoreA"
+                style="@style/LabelTeamScore"
+                android:text="@string/team_score_a" />
+
+            <Button
+                android:id="@+id/btn_plus1A"
+                style="@style/PlusButton"
+                android:text="@string/btn_plus_1" />
+
+            <Button
+                android:id="@+id/btn_plus2A"
+                style="@style/PlusButton"
+                android:text="@string/btn_plus_2" />
+
+            <Button
+                android:id="@+id/btn_plus3A"
+                style="@style/PlusButton"
+                android:text="@string/btn_plus_3" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="10dp"
-            android:layout_width="0dp"
-            android:orientation="vertical"
-            android:layout_weight="1"
-            android:background="@color/white"
-            android:layout_height="match_parent">
+            android:id="@+id/team_b"
+            style="@style/LayoutChild">
 
+            <TextView
+                style="@style/LabelName"
+                android:text="@string/lb_team_b" />
+
+            <TextView
+                android:id="@+id/lb_scoreB"
+                style="@style/LabelTeamScore"
+                android:text="@string/team_score_b" />
+
+            <Button
+                android:id="@+id/btn_plus1B"
+                style="@style/PlusButton"
+                android:text="@string/btn_plus_1" />
+
+            <Button
+                android:id="@+id/btn_plus2B"
+                style="@style/PlusButton"
+                android:text="@string/btn_plus_2" />
+
+            <Button
+                android:id="@+id/btn_plus3B"
+                style="@style/PlusButton"
+                android:text="@string/btn_plus_3" />
         </LinearLayout>
-
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:gravity="center"
-        android:text="RESET"
-        android:layout_gravity="center"
-        android:layout_weight="2"
-        android:layout_height="0dp"/>
+    <LinearLayout style="@style/LayoutPart2">
 
-
-
-<!--    <TextView-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_weight="1"-->
-<!--        android:text="Tỉ lệ 1"-->
-<!--        android:background="#4CAF50"-->
-<!--        android:gravity="center"-->
-<!--        android:textColor="#FFFFFF" />-->
-
-<!--    <TextView-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_weight="1"-->
-<!--        android:text="Tỉ lệ 1"-->
-<!--        android:background="#2196F3"-->
-<!--        android:gravity="center"-->
-<!--        android:textColor="#FFFFFF" />-->
-<!--    -->
-<!--    <Button-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"/>-->
+        <Button
+            android:id="@+id/btn_reset"
+            style="@style/ResetButton"
+            android:text="@string/btn_reset" />
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">ScoreBoard</string>
+    <string name="app_name">Score Board</string>
+    <string name="btn_reset">RESET</string>
+    <string name="btn_plus_3">+3 POINT</string>
+    <string name="btn_plus_2">+2 POINT</string>
+    <string name="btn_plus_1">+1 POINT</string>
+    <string name="team_score_b">0</string>
+    <string name="team_score_a">0</string>
+    <string name="lb_team_a">TEAM A</string>
+    <string name="lb_team_b">TEAM B</string>
 </resources>
