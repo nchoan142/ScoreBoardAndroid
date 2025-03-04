@@ -4,18 +4,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private Button buttonReset;
+    // R: Resource
+    private Button btnReset;
+    private Button btnPlus1A;
+    private Button btnPlus2A;
+    private Button btnPlus3A;
+    private Button btnPlus1B;
+    private Button btnPlus2B;
+    private Button btnPlus3B;
     private TextView textViewScoreA, textViewScoreB;
     private int scoreA = 0;
     private int scoreB = 0;
@@ -33,7 +36,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void mapIdToView() {
-//        buttonReset = findViewById(R.id.btn_reset);
+        btnReset = findViewById(R.id.btn_reset);
+        btnPlus1A = findViewById(R.id.btn_plus1A);
+        btnPlus2A = findViewById(R.id.btn_plus2A);
+        btnPlus3A = findViewById(R.id.btn_plus3A);
+        btnPlus1B = findViewById(R.id.btn_plus1B);
+        btnPlus2B = findViewById(R.id.btn_plus2B);
+        btnPlus3B = findViewById(R.id.btn_plus3B);
         textViewScoreA = findViewById(R.id.lb_scoreA);
         textViewScoreB = findViewById(R.id.lb_scoreB);
     }
@@ -50,9 +59,11 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(v.getId() == R.id.btn_reset) {
-                    textViewScoreA.setText("0");
-                    textViewScoreB.setText("0");
+                if (v.getId() == R.id.btn_reset) {
+                    scoreA = 0;
+                    scoreB = 0;
+                    textViewScoreA.setText(String.valueOf(scoreA));
+                    textViewScoreB.setText(String.valueOf(scoreB));
                 } else if (v.getId() == R.id.btn_plus1A) {
                     scoreA += 1;
                     textViewScoreA.setText(String.valueOf(scoreA));
@@ -74,16 +85,16 @@ public class MainActivity extends AppCompatActivity {
                     scoreB += 3;
                     textViewScoreB.setText(String.valueOf(scoreB));
                 } else {
-                    return;
                 }
             }
         };
-        findViewById(R.id.btn_reset).setOnClickListener(listener);
-        findViewById(R.id.btn_plus1A).setOnClickListener(listener);
-        findViewById(R.id.btn_plus2A).setOnClickListener(listener);
-        findViewById(R.id.btn_plus3A).setOnClickListener(listener);
-        findViewById(R.id.btn_plus1B).setOnClickListener(listener);
-        findViewById(R.id.btn_plus2B).setOnClickListener(listener);
-        findViewById(R.id.btn_plus3B).setOnClickListener(listener);
+
+        btnReset.setOnClickListener(listener);
+        btnPlus1A.setOnClickListener(listener);
+        btnPlus2A.setOnClickListener(listener);
+        btnPlus3A.setOnClickListener(listener);
+        btnPlus1B.setOnClickListener(listener);
+        btnPlus2B.setOnClickListener(listener);
+        btnPlus3B.setOnClickListener(listener);
     }
 }
