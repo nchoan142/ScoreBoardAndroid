@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnPlus1B;
     private Button btnPlus2B;
     private Button btnPlus3B;
-    private TextView textViewScoreA, textViewScoreB;
+    private TextView tvScoreA, tvScoreB;
     private int scoreA = 0;
     private int scoreB = 0;
 
@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         btnPlus1B = findViewById(R.id.btn_plus1B);
         btnPlus2B = findViewById(R.id.btn_plus2B);
         btnPlus3B = findViewById(R.id.btn_plus3B);
-        textViewScoreA = findViewById(R.id.lb_scoreA);
-        textViewScoreB = findViewById(R.id.lb_scoreB);
+        tvScoreA = findViewById(R.id.lb_scoreA);
+        tvScoreB = findViewById(R.id.lb_scoreB);
     }
 
     private void setUpViews() {
@@ -62,28 +62,28 @@ public class MainActivity extends AppCompatActivity {
                 if (v.getId() == R.id.btn_reset) {
                     scoreA = 0;
                     scoreB = 0;
-                    textViewScoreA.setText(String.valueOf(scoreA));
-                    textViewScoreB.setText(String.valueOf(scoreB));
+                    tvScoreA.setText(String.valueOf(scoreA));
+                    tvScoreB.setText(String.valueOf(scoreB));
                 } else if (v.getId() == R.id.btn_plus1A) {
                     scoreA += 1;
-                    textViewScoreA.setText(String.valueOf(scoreA));
+                    tvScoreA.setText(String.valueOf(scoreA));
                 } else if (v.getId() == R.id.btn_plus2A) {
                     scoreA += 2;
-                    textViewScoreA.setText(String.valueOf(scoreA));
+                    tvScoreA.setText(String.valueOf(scoreA));
 
                 } else if (v.getId() == R.id.btn_plus3A) {
                     scoreA += 3;
-                    textViewScoreA.setText(String.valueOf(scoreA));
+                    tvScoreA.setText(String.valueOf(scoreA));
                 } else if (v.getId() == R.id.btn_plus1B) {
                     scoreB += 1;
-                    textViewScoreB.setText(String.valueOf(scoreB));
+                    tvScoreB.setText(String.valueOf(scoreB));
                 } else if (v.getId() == R.id.btn_plus2B) {
                     scoreB += 2;
-                    textViewScoreB.setText(String.valueOf(scoreB));
+                    tvScoreB.setText(String.valueOf(scoreB));
 
                 } else if (v.getId() == R.id.btn_plus3B) {
                     scoreB += 3;
-                    textViewScoreB.setText(String.valueOf(scoreB));
+                    tvScoreB.setText(String.valueOf(scoreB));
                 } else {
                 }
             }
