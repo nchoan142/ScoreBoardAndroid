@@ -4,12 +4,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     // R: Resource
     private Button btnReset;
@@ -47,54 +48,98 @@ public class MainActivity extends AppCompatActivity {
         textViewScoreB = findViewById(R.id.lb_scoreB);
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btn_reset) {
+            scoreA = 0;
+            scoreB = 0;
+            textViewScoreA.setText(String.valueOf(scoreA));
+            textViewScoreB.setText(String.valueOf(scoreB));
+        } else if (v.getId() == R.id.btn_plus1A) {
+            scoreA += 1;
+            textViewScoreA.setText(String.valueOf(scoreA));
+        } else if (v.getId() == R.id.btn_plus2A) {
+            scoreA += 2;
+            textViewScoreA.setText(String.valueOf(scoreA));
+
+        } else if (v.getId() == R.id.btn_plus3A) {
+            scoreA += 3;
+            textViewScoreA.setText(String.valueOf(scoreA));
+        } else if (v.getId() == R.id.btn_plus1B) {
+            scoreB += 1;
+            textViewScoreB.setText(String.valueOf(scoreB));
+        } else if (v.getId() == R.id.btn_plus2B) {
+            scoreB += 2;
+            textViewScoreB.setText(String.valueOf(scoreB));
+
+        } else if (v.getId() == R.id.btn_plus3B) {
+            scoreB += 3;
+            textViewScoreB.setText(String.valueOf(scoreB));
+        } else {
+        }
+    }
+
+    View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (v.getId() == R.id.btn_reset) {
+                scoreA = 0;
+                scoreB = 0;
+                textViewScoreA.setText(String.valueOf(scoreA));
+                textViewScoreB.setText(String.valueOf(scoreB));
+            } else if (v.getId() == R.id.btn_plus1A) {
+                scoreA += 1;
+                textViewScoreA.setText(String.valueOf(scoreA));
+            } else if (v.getId() == R.id.btn_plus2A) {
+                scoreA += 2;
+                textViewScoreA.setText(String.valueOf(scoreA));
+
+            } else if (v.getId() == R.id.btn_plus3A) {
+                scoreA += 3;
+                textViewScoreA.setText(String.valueOf(scoreA));
+            } else if (v.getId() == R.id.btn_plus1B) {
+                scoreB += 1;
+                textViewScoreB.setText(String.valueOf(scoreB));
+            } else if (v.getId() == R.id.btn_plus2B) {
+                scoreB += 2;
+                textViewScoreB.setText(String.valueOf(scoreB));
+
+            } else if (v.getId() == R.id.btn_plus3B) {
+                scoreB += 3;
+                textViewScoreB.setText(String.valueOf(scoreB));
+            } else {
+            }
+        }
+    };
+
     private void setUpViews() {
-//        buttonReset.setOnClickListener(new View.OnClickListener() {
+//        btnReset.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                textViewScoreA.setText("0");
-//                textViewScoreB.setText("0");
+//                textViewScoreA.setText("Reset");
+//                textViewScoreB.setText("Reset");
+//
+//                Toast.makeText(MainActivity.this, this.getClass().toString(), Toast.LENGTH_SHORT).show();
 //            }
 //        });
 
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v.getId() == R.id.btn_reset) {
-                    scoreA = 0;
-                    scoreB = 0;
-                    textViewScoreA.setText(String.valueOf(scoreA));
-                    textViewScoreB.setText(String.valueOf(scoreB));
-                } else if (v.getId() == R.id.btn_plus1A) {
-                    scoreA += 1;
-                    textViewScoreA.setText(String.valueOf(scoreA));
-                } else if (v.getId() == R.id.btn_plus2A) {
-                    scoreA += 2;
-                    textViewScoreA.setText(String.valueOf(scoreA));
+//        btnReset.setOnClickListener(listener);
+//        btnPlus1A.setOnClickListener(listener);
+//        btnPlus2A.setOnClickListener(listener);
+//        btnPlus3A.setOnClickListener(listener);
+//        btnPlus1B.setOnClickListener(listener);
+//        btnPlus2B.setOnClickListener(listener);
+//        btnPlus3B.setOnClickListener(listener);
 
-                } else if (v.getId() == R.id.btn_plus3A) {
-                    scoreA += 3;
-                    textViewScoreA.setText(String.valueOf(scoreA));
-                } else if (v.getId() == R.id.btn_plus1B) {
-                    scoreB += 1;
-                    textViewScoreB.setText(String.valueOf(scoreB));
-                } else if (v.getId() == R.id.btn_plus2B) {
-                    scoreB += 2;
-                    textViewScoreB.setText(String.valueOf(scoreB));
+        // this là MainActivity
+        btnReset.setOnClickListener(this);
+        btnPlus1A.setOnClickListener(this);
+        btnPlus2A.setOnClickListener(this);
+        btnPlus3A.setOnClickListener(this);
+        btnPlus1B.setOnClickListener(this);
+        btnPlus2B.setOnClickListener(this);
+        btnPlus3B.setOnClickListener(this);
 
-                } else if (v.getId() == R.id.btn_plus3B) {
-                    scoreB += 3;
-                    textViewScoreB.setText(String.valueOf(scoreB));
-                } else {
-                }
-            }
-        };
 
-        btnReset.setOnClickListener(listener);
-        btnPlus1A.setOnClickListener(listener);
-        btnPlus2A.setOnClickListener(listener);
-        btnPlus3A.setOnClickListener(listener);
-        btnPlus1B.setOnClickListener(listener);
-        btnPlus2B.setOnClickListener(listener);
-        btnPlus3B.setOnClickListener(listener);
     }
 }
