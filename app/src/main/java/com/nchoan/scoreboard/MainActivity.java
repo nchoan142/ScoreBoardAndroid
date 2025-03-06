@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnPlus1B;
     private Button btnPlus2B;
     private Button btnPlus3B;
-    private TextView textViewScoreA, textViewScoreB;
+    private TextView tvScoreA, tvScoreB;
     private int scoreA = 0;
     private int scoreB = 0;
 
@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPlus1B = findViewById(R.id.btn_plus1B);
         btnPlus2B = findViewById(R.id.btn_plus2B);
         btnPlus3B = findViewById(R.id.btn_plus3B);
-        textViewScoreA = findViewById(R.id.lb_scoreA);
-        textViewScoreB = findViewById(R.id.lb_scoreB);
+        tvScoreA = findViewById(R.id.lb_scoreA);
+        tvScoreB = findViewById(R.id.lb_scoreB);
     }
 
     @Override
@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //            }
 //        });
 
+<<<<<<< HEAD
 //        btnReset.setOnClickListener(listener);
 //        btnPlus1A.setOnClickListener(listener);
 //        btnPlus2A.setOnClickListener(listener);
@@ -140,6 +141,40 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnPlus2B.setOnClickListener(this);
         btnPlus3B.setOnClickListener(this);
 
+=======
+        View.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.getId() == R.id.btn_reset) {
+                    scoreA = 0;
+                    scoreB = 0;
+                    tvScoreA.setText(String.valueOf(scoreA));
+                    tvScoreB.setText(String.valueOf(scoreB));
+                } else if (v.getId() == R.id.btn_plus1A) {
+                    scoreA += 1;
+                    tvScoreA.setText(String.valueOf(scoreA));
+                } else if (v.getId() == R.id.btn_plus2A) {
+                    scoreA += 2;
+                    tvScoreA.setText(String.valueOf(scoreA));
+
+                } else if (v.getId() == R.id.btn_plus3A) {
+                    scoreA += 3;
+                    tvScoreA.setText(String.valueOf(scoreA));
+                } else if (v.getId() == R.id.btn_plus1B) {
+                    scoreB += 1;
+                    tvScoreB.setText(String.valueOf(scoreB));
+                } else if (v.getId() == R.id.btn_plus2B) {
+                    scoreB += 2;
+                    tvScoreB.setText(String.valueOf(scoreB));
+
+                } else if (v.getId() == R.id.btn_plus3B) {
+                    scoreB += 3;
+                    tvScoreB.setText(String.valueOf(scoreB));
+                } else {
+                }
+            }
+        };
+>>>>>>> e904f38c6494c4efc4fef863ef15d1d4de1dfda5
 
     }
 }
